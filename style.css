@@ -1,0 +1,374 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(120deg, #84fab0, #8fd3f4);
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Logo {
+  font-size: 2em;
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+  color: #0077b6;
+  margin: 0;
+  cursor: pointer;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 1.3em;
+  color: #0077b6;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 20px;
+  margin-right: 10px;
+  transition: color 0.4s;
+}
+
+.nav-link:hover {
+  color: #000000;
+}
+
+.btnLogin-popup, .btnSignup-popup {
+  background: #0077b6;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  padding: 10px 20px;
+  transition: background-color 0.5s;
+  margin-left: 10px;
+}
+
+.btnLogin-popup:hover, .btnSignup-popup:hover {
+  background-color: #023e8a;
+}
+
+#about {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#about h4 {
+  font-size: 2em;
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.2em;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0077b6;
+  color: #fff;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Login Popup */
+.login-popup {
+  display: none;
+  position: fixed;
+  min-width: fit-content;
+  width: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box h2 {
+  font-size: 1.5em;
+  color: #0077b6;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.login-box .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.remember-forget {
+  display: flex;
+  border-radius: 15px;
+  margin-top: 0px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.remember-forget label {
+  font-size: 0.9em;
+  color: #555;
+  border-radius: 15px;
+}
+
+.login-button {
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: green;
+}
+
+.forgot-password-link {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #0077b6;
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  color: red;
+}
+
+.google-icon {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.gsi-material-button {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 320px;
+  height: 40px;
+  padding: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  margin: 0 auto;
+}
+
+.gsi-material-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gsi-material-button-icon {
+  width: 20px; /* Adjust the size of the icon */
+  height: 20px; /* Adjust the size of the icon */
+}
+
+.gsi-material-button-contents {
+  color: #555;
+  font-size: 1em;
+}
+
+.close {
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+body.login-blur .login-popup {
+  filter: none;
+}
+
+/* Signup Popup */
+.signup-popup {
+  display: none;
+  position: fixed;
+  min-width: fit-content;
+  width: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.signup-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-box h2 {
+  font-size: 1.5em;
+  color: #0077b6;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.signup-box .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.signup-button {
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+  background-color: green;
+}
+
+.close {
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+body.signup-blur .signup-popup {
+  filter: none;
+}
+
+.error-message {
+  color: red;
+}
+
+.criteria-message {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
+}
+
+.input-box {
+  margin-bottom: 15px;
+}
+
+.input-box label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-box input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.signup-button {
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+  background-color: green;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+.button-group {
+  display: flex;
+  align-items: center;
+}
+
+.btnLogin-popup, .btnSignup-popup {
+  background: #0077b6;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  padding: 10px 20px;
+  transition: background-color 0.5s;
+  margin-left: 10px;
+}
+
+.btnLogin-popup:hover, .btnSignup-popup:hover {
+  background-color: #023e8a;
+}
